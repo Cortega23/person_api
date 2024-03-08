@@ -4,10 +4,12 @@ WORKDIR /app
 
 COPY . /app
 
-RUN pip install -r requerimientos.txt
+RUN pip install --no-cache-dir -r requerimientos.txt
 
-EXPOSE 80
+EXPOSE 8080
 
-ENV NAME world
+ENV Name world
 
-CMD["python", "app.py"]
+ENV PORT 8080
+
+CMD ["python", "app.py"]
